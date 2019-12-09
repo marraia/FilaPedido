@@ -1,0 +1,28 @@
+﻿<Window x:Class="FilaPedido.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FilaPedido"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="614.444" Width="800" Background="Black" WindowStyle="ToolWindow">
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="157*"/>
+            <RowDefinition Height="37*"/>
+        </Grid.RowDefinitions>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="38" Margin="10,10,0,0" VerticalAlignment="Top" Width="772"/>
+        <Border BorderBrush="White" BorderThickness="1" HorizontalAlignment="Left" Height="38" Margin="10,10,0,0" VerticalAlignment="Top" Width="772">
+            <ListBox x:Name="listItem" Background="Black" Foreground="#FF04FB10"  FontSize="25"/>
+        </Border>
+        <Border BorderBrush="White" BorderThickness="1" HorizontalAlignment="Left" Height="161" Margin="10,55,0,0" VerticalAlignment="Top" Width="184"/>
+        <Border BorderBrush="White" BorderThickness="1" HorizontalAlignment="Left" Height="161" Margin="10,391,0,0" VerticalAlignment="Top" Width="184" Grid.RowSpan="2"/>
+        <Label x:Name="lblEntrada" Content="6" HorizontalAlignment="Left" Margin="69,79,0,0" VerticalAlignment="Top" Foreground="#FF04FB10" Height="103" Width="147" FontSize="72" FontWeight="Bold"/>
+        <Label x:Name="lblEntrada_Copy" Content="135" HorizontalAlignment="Left" Margin="29,418,0,0" VerticalAlignment="Top" Foreground="#FFFB2604" Height="103" Width="147" FontSize="72" FontWeight="Bold" Grid.RowSpan="2"/>
+        <Border BorderBrush="White" BorderThickness="1" HorizontalAlignment="Left" Height="327" Margin="199,55,0,0" VerticalAlignment="Top" Width="583" Grid.RowSpan="2">
+            <DataGrid x:Name="dbView" ColumnHeaderHeight="150" ColumnWidth="180" Background="Black" FontSize="20" HeadersVisibility="None" MouseDoubleClick="DbView_MouseDoubleClick" Margin="0,0,0,-171"/>
+        </Border>
+        <Border BorderBrush="White" BorderThickness="1" HorizontalAlignment="Left" Height="161" Margin="10,223,0,0" VerticalAlignment="Top" Width="184"/>
+        <Label x:Name="lblEntrada_Copy1" Content="3" HorizontalAlignment="Left" Margin="69,250,0,0" VerticalAlignment="Top" Foreground="#FFE2630B" Height="103" Width="147" FontSize="72" FontWeight="Bold"/>
+    </Grid>
+</Window>
