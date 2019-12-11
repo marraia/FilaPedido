@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Xml;
 
 namespace FilaPedido
 {
@@ -23,17 +24,27 @@ namespace FilaPedido
         public Window1()
         {
             InitializeComponent();
-            var pedidos = new List<Item>();
-            
+            var t = ObterNovo();
+            Bind(t);
+        }
 
-            pedidos.Add(new Item() { Pedido = "092114", Descricao = "BATATA", Quantidade = 5, Tipo = "NOVO" });
-            pedidos.Add(new Item() { Pedido = "092114", Descricao = "BATATA", Quantidade = 5, Tipo = "NOVO" });
-            pedidos.Add(new Item() { Pedido = "092114", Descricao = "BATATA", Quantidade = 5, Tipo = "NOVO" });
-            pedidos.Add(new Item() { Pedido = "092114", Descricao = "BATATA", Quantidade = 5, Tipo = "EM PREPARAÇÃO" });
-
-
+        private void Bind(List<Item> pedidos)
+        {
             dgItem.ItemsSource = pedidos;
             this.Contar();
+        }
+
+        private List<Item> ObterNovo()
+        {
+            var pedidos = new List<Item>();
+
+
+            pedidos.Add(new Item() { Pedido = "092114", Descricao = "BATATA", Quantidade = 5, Tipo = "NOVO" });
+            pedidos.Add(new Item() { Pedido = "092115", Descricao = "BATATA", Quantidade = 5, Tipo = "NOVO" });
+            pedidos.Add(new Item() { Pedido = "092116", Descricao = "BATATA", Quantidade = 5, Tipo = "NOVO" });
+            pedidos.Add(new Item() { Pedido = "092113", Descricao = "BATATA", Quantidade = 5, Tipo = "EM PREPARAÇÃO" });
+
+            return pedidos;
         }
 
         private void DgItem_LoadingRow(object sender, DataGridRowEventArgs e)
@@ -70,6 +81,12 @@ namespace FilaPedido
             this.lblSaida.FontWeight = FontWeights.Bold;
             this.lblSaida.Foreground = new SolidColorBrush(Colors.Blue);
             this.lblSaida.HorizontalContentAlignment = HorizontalAlignment.Center;
+        }
+
+        private void DgItem_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var grid = sender as DataGrid;
+            var cellValue = grid.SelectedValue as Item;
         }
     }
 

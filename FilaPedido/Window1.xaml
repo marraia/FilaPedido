@@ -5,15 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FilaPedido"
         mc:Ignorable="d"
-        Title="Window1" Height="500" Width="900">
+        Title="Gerenciador de Fila" Height="424.285" Width="905.714" ResizeMode="NoResize" Background="#FF060606">
 
     <Grid Background="Black">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="747*"/>
-            <ColumnDefinition Width="143*"/>
+            <ColumnDefinition Width="671*"/>
+            <ColumnDefinition Width="83*"/>
+            <ColumnDefinition Width="144*"/>
         </Grid.ColumnDefinitions>
-        <Border BorderBrush="White" BorderThickness="1" Grid.Column="1" HorizontalAlignment="Left" Height="49" Margin="10,10,0,0" VerticalAlignment="Top" Width="870" Grid.ColumnSpan="2"/>
+        <Border BorderBrush="White" BorderThickness="1" Grid.Column="1" HorizontalAlignment="Left" Height="49" Margin="10,10,0,0" VerticalAlignment="Top" Width="870" Grid.ColumnSpan="3"/>
         <Border BorderBrush="White" BorderThickness="1" Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="10,64,0,0" VerticalAlignment="Top" Width="190">
             <Label x:Name="lblEntrada" Content="Label" Grid.Column="1"/>
         </Border>
@@ -23,8 +24,8 @@
         <Border BorderBrush="White" BorderThickness="1" Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="10,277,0,0" VerticalAlignment="Top" Width="190">
             <Label x:Name="lblSaida" Content="Label" Grid.Column="1"/>
         </Border>
-        <Border x:Name="gridItem" BorderBrush="White" BorderThickness="1" Grid.Column="1" HorizontalAlignment="Left" Height="313" Margin="205,64,0,0" VerticalAlignment="Top" Width="675" Grid.ColumnSpan="2">
-            <DataGrid x:Name="dgItem" AutoGenerateColumns="False" Background="Black" HeadersVisibility="None" RowBackground="Black" LoadingRow="DgItem_LoadingRow" GridLinesVisibility="None" BorderBrush="#FFF9FBFD">
+        <Border x:Name="gridItem" BorderBrush="White" BorderThickness="1" Grid.Column="1" HorizontalAlignment="Left" Height="313" Margin="205,64,0,0" VerticalAlignment="Top" Width="675" Grid.ColumnSpan="3">
+            <DataGrid x:Name="dgItem" AutoGenerateColumns="False" Background="Black" HeadersVisibility="None" RowBackground="Black" LoadingRow="DgItem_LoadingRow" GridLinesVisibility="None" BorderBrush="#FFF9FBFD" MouseDoubleClick="DgItem_MouseDoubleClick">
                 <DataGrid.Columns>
                     <DataGridTextColumn x:Name="Pedido"
                             Binding="{Binding Path=Pedido}"
