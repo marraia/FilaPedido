@@ -17,3 +17,5 @@ C:\_estudos\FilaPedido\FilaPedido\obj\Debug\Senha.g.cs
 C:\_estudos\FilaPedido\FilaPedido\obj\Debug\Senha.baml
 C:\_estudos\FilaPedido\FilaPedido\obj\Debug\Window1.g.cs
 C:\_estudos\FilaPedido\FilaPedido\obj\Debug\Window1.baml
+C:\_estudos\FilaPedido\FilaPedido\obj\Debug\Impressao.g.cs
+C:\_estudos\FilaPedido\FilaPedido\obj\Debug\Impressao.baml

@@ -26,6 +26,16 @@ namespace FilaPedido
             InitializeComponent();
             var t = ObterNovo();
             Bind(t);
+            BindCbo();
+        }
+
+        private void BindCbo()
+        {
+            var pedidos = new List<NomeId>();
+            pedidos.Add(new NomeId() { Id = 1, Nome = "BATATA" });
+
+            
+            cboItem.ItemsSource = pedidos;
         }
 
         private void Bind(List<Item> pedidos)
@@ -96,5 +106,11 @@ namespace FilaPedido
         public string Descricao { get; set; }
         public int Quantidade { get; set; }
         public string Tipo { get; set; }
+    }
+
+    public class NomeId
+    {
+        public int Id { get; set; }
+        public string Nome { get; set; }
     }
 }
