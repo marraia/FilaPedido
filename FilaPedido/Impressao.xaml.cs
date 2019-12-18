@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace FilaPedido
 {
@@ -25,9 +26,19 @@ namespace FilaPedido
             InitializeComponent();
         }
 
+
+        private delegate void UpdateLabelDelegate(DependencyProperty dp, object value);
+
+        public void UpdateLabelContent(Label label, string newContent)
+        {
+            Dispatcher.Invoke(new UpdateLabelDelegate(label.SetValue), DispatcherPriority.Background, ContentProperty, newContent);
+        }
+
+
         public void Imprimir(string nomeImpressora, int quantidade)
         {
-            var ordem = $"{DateTime.Now.Day}{DateTime.Now.Month}{DateTime.Now.Minute}{DateTime.Now.Millisecond}";
+            var ordem = $"{DateTime.Now.Hour}{DateTime.Now.Minute}{DateTime.Now.Second}{DateTime.Now.Millisecond}";
+            //var ordem = Math.Round((decimal)new Random().Next() * 2019);
             var listaItem = new List<ItemPedido>();
 
             for (int i = 0; i <= quantidade; i++)
@@ -37,7 +48,7 @@ namespace FilaPedido
 
             var pedido = new Pedido()
             {
-                Ordem = ordem,
+                Ordem = ordem.ToString(),
                 NomeImpressora = nomeImpressora,
                 Itens = listaItem
             };
@@ -52,11 +63,13 @@ namespace FilaPedido
             controlOrdem.Content = pedido.Ordem;
             controlContador.Content = pedido.Itens.Count();
             var contador = pedido.Itens.Count();
+            controlOrdem.Refresh();
+            controlContador.Refresh();
 
             foreach (var item in pedido.Itens)
             {
                 contador--;
-                controlContador.Content = contador;
+                UpdateLabelContent(controlContador, contador.ToString());
             }
 
             controlOrdem.Content = "--";
@@ -108,8 +121,13 @@ namespace FilaPedido
 
         private void BtnFechar_Copy_Click(object sender, RoutedEventArgs e)
         {
-            Imprimir("Montenegro1", 5);
-            Imprimir("Montenegro2", 10);
+            Imprimir("Montenegro1", 1000);
+            //Imprimir("Montenegro2", 10000);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Imprimir("Montenegro2", 10000);
         }
     }
 
@@ -124,5 +142,15 @@ namespace FilaPedido
     public class ItemPedido
     {
         public string Descricao { get; set; }
+    }
+
+    public static class ExtensionMethods
+    {
+        private static Action EmptyDelegate = delegate () { };
+
+        public static void Refresh(this UIElement uiElement)
+        {
+            uiElement.Dispatcher.Invoke(DispatcherPriority.Render, EmptyDelegate);
+        }
     }
 }
