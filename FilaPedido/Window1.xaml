@@ -6,16 +6,9 @@
         xmlns:local="clr-namespace:FilaPedido"
         xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2" x:Class="FilaPedido.Window1"
         mc:Ignorable="d"
-        Title="Gerenciador de Fila" Height="424.285" Width="905.714" ResizeMode="CanMinimize" Background="#FF060606" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+        Title="Gerenciador de Fila" Height="445.714" Width="888.571" ResizeMode="NoResize" Background="#FF060606" MouseLeftButtonDown="Window_MouseLeftButtonDown" WindowStyle="None">
 
     <Grid Background="Black">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="235*"/>
-            <ColumnDefinition Width="436*"/>
-            <ColumnDefinition Width="83*"/>
-            <ColumnDefinition Width="144*"/>
-        </Grid.ColumnDefinitions>
         <Border BorderBrush="White" BorderThickness="1" Grid.Column="1" HorizontalAlignment="Left" Height="49" Margin="10,10,0,0" VerticalAlignment="Top" Width="870" Grid.ColumnSpan="4">
             <ComboBox x:Name="cboItem" Background="Black" Foreground="#FF7030A0" SelectedValuePath="Id" DisplayMemberPath="Nome" FontSize="30" FontWeight="Bold"  HorizontalContentAlignment="Center" >
                 <ComboBox.ItemContainerStyle>

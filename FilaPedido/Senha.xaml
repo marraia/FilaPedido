@@ -7,7 +7,6 @@
         mc:Ignorable="d"
         Title="Senha" Height="450" Width="800">
     <Grid Background="Black">
-        <Label Content="WFFFF" HorizontalAlignment="Left" Margin="100,69,0,0" VerticalAlignment="Top" FontSize="200" Foreground="Aqua"/>
 
     </Grid>
 </Window>
