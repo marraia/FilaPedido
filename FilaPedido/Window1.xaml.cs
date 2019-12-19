@@ -49,10 +49,10 @@ namespace FilaPedido
             var pedidos = new List<Item>();
 
 
-            pedidos.Add(new Item() { Pedido = "092114", Descricao = "BATATA", Quantidade = 5, Tipo = "NOVO" });
-            pedidos.Add(new Item() { Pedido = "092115", Descricao = "BATATA", Quantidade = 5, Tipo = "NOVO" });
-            pedidos.Add(new Item() { Pedido = "092116", Descricao = "BATATA", Quantidade = 5, Tipo = "NOVO" });
-            pedidos.Add(new Item() { Pedido = "092113", Descricao = "BATATA", Quantidade = 5, Tipo = "EM PREPARAÇÃO" });
+            pedidos.Add(new Item() { Pedido = $"{DateTime.Now.Hour}{DateTime.Now.Minute}{DateTime.Now.Second}{DateTime.Now.Millisecond}", Descricao = "BATATA", Quantidade = 5, Tipo = "NOVO" });
+            pedidos.Add(new Item() { Pedido = $"{DateTime.Now.Hour}{DateTime.Now.Minute}{DateTime.Now.Second}{DateTime.Now.Millisecond}", Descricao = "BATATA", Quantidade = 5, Tipo = "NOVO" });
+            pedidos.Add(new Item() { Pedido = $"{DateTime.Now.Hour}{DateTime.Now.Minute}{DateTime.Now.Second}{DateTime.Now.Millisecond}", Descricao = "BATATA", Quantidade = 5, Tipo = "NOVO" });
+            pedidos.Add(new Item() { Pedido = $"{DateTime.Now.Hour}{DateTime.Now.Minute}{DateTime.Now.Second}{DateTime.Now.Millisecond}", Descricao = "BATATA", Quantidade = 5, Tipo = "EM PREPARAÇÃO" });
 
             return pedidos;
         }
@@ -97,6 +97,11 @@ namespace FilaPedido
         {
             var grid = sender as DataGrid;
             var cellValue = grid.SelectedValue as Item;
+        }
+
+        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
         }
     }
 

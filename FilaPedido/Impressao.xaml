@@ -5,31 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FilaPedido"
         mc:Ignorable="d"
-        Title="Impressao" Height="368.24" Width="800" ResizeMode="NoResize" WindowStyle="None">
-    <Grid Background="Black" Margin="0,0,0,-1" x:Name="Teste">
-        <Border BorderBrush="White" BorderThickness="1" HorizontalAlignment="Left" Height="60" Margin="10,10,0,0" VerticalAlignment="Top" Width="772">
-            <Label x:Name="lblImpressao" Content="IMPRESSORAS" Grid.Column="1" Foreground="#FF7030A0" FontSize="35" ScrollViewer.CanContentScroll="True" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+        Title="Impressao" Height="293.955" Width="457.143" ResizeMode="NoResize" WindowStyle="None" SizeToContent="Width" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+    <Grid Background="Black" x:Name="Teste" HorizontalAlignment="Left" Width="457">
+        <Border BorderBrush="White" BorderThickness="1" HorizontalAlignment="Left" Height="47" Margin="10,10,0,0" VerticalAlignment="Top" Width="435">
+            <Label x:Name="lblImpressao" Content="IMPRESSORAS" Grid.Column="1" Foreground="#FF7030A0" FontSize="25" ScrollViewer.CanContentScroll="True" HorizontalContentAlignment="Center" FontWeight="Bold"/>
         </Border>
-        <Border BorderBrush="White" BorderThickness="1" HorizontalAlignment="Left" Height="52" Margin="10,75,0,0" VerticalAlignment="Top" Width="384">
-            <Label x:Name="lblMontenegro1" Content="MONTENEGRO1" Grid.Column="1" Foreground="#FF064AFF" FontSize="30" ScrollViewer.CanContentScroll="True" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+        <Border BorderBrush="White" BorderThickness="1" HorizontalAlignment="Left" Height="52" Margin="10,62,0,0" VerticalAlignment="Top" Width="215">
+            <Label x:Name="lblMontenegro1" Content="MONTENEGRO1" Grid.Column="1" Foreground="#FF064AFF" FontSize="20" ScrollViewer.CanContentScroll="True" HorizontalContentAlignment="Center" FontWeight="Bold" Margin="0,5,0,4"/>
         </Border>
-        <Border BorderBrush="White" BorderThickness="1" HorizontalAlignment="Left" Height="52" Margin="399,75,0,0" VerticalAlignment="Top" Width="384">
-            <Label x:Name="lblMontenegro2" Content="MONTENEGRO2" Grid.Column="1" Foreground="#FFFBDA06" FontSize="30" ScrollViewer.CanContentScroll="True" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+        <Border BorderBrush="White" BorderThickness="1" HorizontalAlignment="Left" Height="52" Margin="230,62,0,0" VerticalAlignment="Top" Width="215">
+            <Label x:Name="lblMontenegro2" Content="MONTENEGRO2" Grid.Column="1" Foreground="#FFFBDA06" FontSize="20" ScrollViewer.CanContentScroll="True" HorizontalContentAlignment="Center" FontWeight="Bold" Margin="0,5,0,-5"/>
         </Border>
-        <Border BorderBrush="White" BorderThickness="1" HorizontalAlignment="Left" Height="76" Margin="10,134,0,0" VerticalAlignment="Top" Width="384">
-            <Label x:Name="lblImpressaoMontenegro1" Content="--" Grid.Column="1" Foreground="#FF05C141" FontSize="30" ScrollViewer.CanContentScroll="True" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+        <Border BorderBrush="White" BorderThickness="1" HorizontalAlignment="Left" Height="62" Margin="10,119,0,0" VerticalAlignment="Top" Width="215">
+            <Label x:Name="lblImpressaoMontenegro1" Content="--" Grid.Column="1" Foreground="#FF05C141" FontSize="20" ScrollViewer.CanContentScroll="True" HorizontalContentAlignment="Center" FontWeight="Bold"/>
         </Border>
-        <Border BorderBrush="White" BorderThickness="1" HorizontalAlignment="Left" Height="93" Margin="10,215,0,0" VerticalAlignment="Top" Width="384">
-            <Label x:Name="lblImpressaoMontenegro1Contador" Content="--" Grid.Column="1" Foreground="#FF05C141" FontSize="30" ScrollViewer.CanContentScroll="True" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+        <Border BorderBrush="White" BorderThickness="1" HorizontalAlignment="Left" Height="69" Margin="10,186,0,0" VerticalAlignment="Top" Width="215">
+            <Label x:Name="lblImpressaoMontenegro1Contador" Content="--" Grid.Column="1" Foreground="#FF05C141" FontSize="20" ScrollViewer.CanContentScroll="True" HorizontalContentAlignment="Center" FontWeight="Bold"/>
         </Border>
-        <Border BorderBrush="White" BorderThickness="1" HorizontalAlignment="Left" Height="76" Margin="399,134,0,0" VerticalAlignment="Top" Width="384">
-            <Label x:Name="lblImpressaoMontenegro2" Content="--" Grid.Column="1" Foreground="#FFFB7506" FontSize="30" ScrollViewer.CanContentScroll="True" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+        <Border BorderBrush="White" BorderThickness="1" HorizontalAlignment="Left" Height="62" Margin="230,119,0,0" VerticalAlignment="Top" Width="215">
+            <Label x:Name="lblImpressaoMontenegro2" Content="--" Grid.Column="1" Foreground="#FFFB7506" FontSize="20" ScrollViewer.CanContentScroll="True" HorizontalContentAlignment="Center" FontWeight="Bold"/>
         </Border>
-        <Border BorderBrush="White" BorderThickness="1" HorizontalAlignment="Left" Height="93" Margin="399,215,0,0" VerticalAlignment="Top" Width="384">
-            <Label x:Name="lblImpressaoMontenegro2Contador" Content="--" Grid.Column="1" Foreground="#FFFB7506" FontSize="30" ScrollViewer.CanContentScroll="True" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+        <Border BorderBrush="White" BorderThickness="1" HorizontalAlignment="Left" Height="69" Margin="230,186,0,0" VerticalAlignment="Top" Width="215">
+            <Label x:Name="lblImpressaoMontenegro2Contador" Content="--" Grid.Column="1" Foreground="#FFFB7506" FontSize="20" ScrollViewer.CanContentScroll="True" HorizontalContentAlignment="Center" FontWeight="Bold" Height="68" VerticalAlignment="Top" Margin="1,0,-1,-1"/>
         </Border>
-        <Button x:Name="btnFechar" Content="Fechar" HorizontalAlignment="Left" Margin="675,318,0,0" VerticalAlignment="Top" Width="108" Height="41" Background="#FF1207F1" BorderBrush="{x:Null}" Foreground="White" Click="BtnFechar_Click"/>
-        <Button x:Name="btnFechar_Copy" Content="Fechar" HorizontalAlignment="Left" Margin="562,318,0,0" VerticalAlignment="Top" Width="108" Height="41" Background="#FF1207F1" BorderBrush="{x:Null}" Foreground="White" Click="BtnFechar_Copy_Click"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="460,328,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button x:Name="btnFechar" Content="Fechar" HorizontalAlignment="Left" Margin="337,260,0,0" VerticalAlignment="Top" Width="108" Height="27" Background="#FF1207F1" BorderBrush="{x:Null}" Foreground="White" Click="BtnFechar_Click"/>
     </Grid>
 </Window>

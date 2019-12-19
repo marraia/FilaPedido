@@ -24,6 +24,8 @@ namespace FilaPedido
         public Impressao()
         {
             InitializeComponent();
+            Imprimir("Montenegro1", 1000);
+            Imprimir("Montenegro2", 1000);
         }
 
 
@@ -119,15 +121,9 @@ namespace FilaPedido
             return foundChild;
         }
 
-        private void BtnFechar_Copy_Click(object sender, RoutedEventArgs e)
+        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            Imprimir("Montenegro1", 1000);
-            //Imprimir("Montenegro2", 10000);
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Imprimir("Montenegro2", 10000);
+            DragMove();
         }
     }
 
