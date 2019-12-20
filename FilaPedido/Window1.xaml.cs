@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -33,8 +34,9 @@ namespace FilaPedido
         {
             var pedidos = new List<NomeId>();
             pedidos.Add(new NomeId() { Id = 1, Nome = "BATATA" });
+            pedidos.Add(new NomeId() { Id = 1, Nome = "CONTRA FILÉ" });
 
-            
+
             cboItem.ItemsSource = pedidos;
         }
 
@@ -48,13 +50,25 @@ namespace FilaPedido
         {
             var pedidos = new List<Item>();
 
-
             pedidos.Add(new Item() { Pedido = $"{DateTime.Now.Hour}{DateTime.Now.Minute}{DateTime.Now.Second}{DateTime.Now.Millisecond}", Descricao = "BATATA", Quantidade = 5, Tipo = "NOVO" });
             pedidos.Add(new Item() { Pedido = $"{DateTime.Now.Hour}{DateTime.Now.Minute}{DateTime.Now.Second}{DateTime.Now.Millisecond}", Descricao = "BATATA", Quantidade = 5, Tipo = "NOVO" });
             pedidos.Add(new Item() { Pedido = $"{DateTime.Now.Hour}{DateTime.Now.Minute}{DateTime.Now.Second}{DateTime.Now.Millisecond}", Descricao = "BATATA", Quantidade = 5, Tipo = "NOVO" });
             pedidos.Add(new Item() { Pedido = $"{DateTime.Now.Hour}{DateTime.Now.Minute}{DateTime.Now.Second}{DateTime.Now.Millisecond}", Descricao = "BATATA", Quantidade = 5, Tipo = "EM PREPARAÇÃO" });
+            pedidos.Add(new Item() { Pedido = $"{DateTime.Now.Hour}{DateTime.Now.Minute}{DateTime.Now.Second}{DateTime.Now.Millisecond}", Descricao = "BATATA", Quantidade = 5, Tipo = "NOVO" });
+            pedidos.Add(new Item() { Pedido = $"{DateTime.Now.Hour}{DateTime.Now.Minute}{DateTime.Now.Second}{DateTime.Now.Millisecond}", Descricao = "BATATA", Quantidade = 5, Tipo = "NOVO" });
+            pedidos.Add(new Item() { Pedido = $"{DateTime.Now.Hour}{DateTime.Now.Minute}{DateTime.Now.Second}{DateTime.Now.Millisecond}", Descricao = "BATATA", Quantidade = 5, Tipo = "NOVO" });
+            pedidos.Add(new Item() { Pedido = $"{DateTime.Now.Hour}{DateTime.Now.Minute}{DateTime.Now.Second}{DateTime.Now.Millisecond}", Descricao = "BATATA", Quantidade = 5, Tipo = "NOVO" });
+            pedidos.Add(new Item() { Pedido = $"{DateTime.Now.Hour}{DateTime.Now.Minute}{DateTime.Now.Second}{DateTime.Now.Millisecond}", Descricao = "BATATA", Quantidade = 5, Tipo = "NOVO" });
+            pedidos.Add(new Item() { Pedido = $"{DateTime.Now.Hour}{DateTime.Now.Minute}{DateTime.Now.Second}{DateTime.Now.Millisecond}", Descricao = "BATATA", Quantidade = 5, Tipo = "NOVO" });
+            pedidos.Add(new Item() { Pedido = $"{DateTime.Now.Hour}{DateTime.Now.Minute}{DateTime.Now.Second}{DateTime.Now.Millisecond}", Descricao = "BATATA", Quantidade = 5, Tipo = "NOVO" });
+            pedidos.Add(new Item() { Pedido = $"{DateTime.Now.Hour}{DateTime.Now.Minute}{DateTime.Now.Second}{DateTime.Now.Millisecond}", Descricao = "BATATA", Quantidade = 5, Tipo = "NOVO" });
+            pedidos.Add(new Item() { Pedido = $"{DateTime.Now.Hour}{DateTime.Now.Minute}{DateTime.Now.Second}{DateTime.Now.Millisecond}", Descricao = "BATATA", Quantidade = 5, Tipo = "EM PREPARAÇÃO" });
+            pedidos.Add(new Item() { Pedido = $"{DateTime.Now.Hour}{DateTime.Now.Minute}{DateTime.Now.Second}{DateTime.Now.Millisecond}", Descricao = "BATATA", Quantidade = 5, Tipo = "EM PREPARAÇÃO" });
+            pedidos.Add(new Item() { Pedido = $"{DateTime.Now.Hour}{DateTime.Now.Minute}{DateTime.Now.Second}{DateTime.Now.Millisecond}", Descricao = "BATATA", Quantidade = 5, Tipo = "EM PREPARAÇÃO" });
+            pedidos.Add(new Item() { Pedido = $"{DateTime.Now.Hour}{DateTime.Now.Minute}{DateTime.Now.Second}{DateTime.Now.Millisecond}", Descricao = "BATATA", Quantidade = 5, Tipo = "EM PREPARAÇÃO" });
+            pedidos.Add(new Item() { Pedido = $"{DateTime.Now.Hour}{DateTime.Now.Minute}{DateTime.Now.Second}{DateTime.Now.Millisecond}", Descricao = "BATATA", Quantidade = 5, Tipo = "EM PREPARAÇÃO" });
 
-            return pedidos;
+            return pedidos.OrderBy(x => x.Tipo).ThenBy(x => x.Pedido).ToList();
         }
 
         private void DgItem_LoadingRow(object sender, DataGridRowEventArgs e)
@@ -102,6 +116,11 @@ namespace FilaPedido
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             DragMove();
+        }
+
+        private void BtnFechar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 

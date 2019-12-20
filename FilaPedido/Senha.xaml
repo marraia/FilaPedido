@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FilaPedido"
         mc:Ignorable="d"
-        Title="Senha" Height="450" Width="800">
+        Title="Senha" Height="867.527" Width="1310.989" WindowStyle="None" WindowState="Maximized">
     <Grid Background="Black">
-
+        <Border BorderBrush="#FFFDFCFC" BorderThickness="1" HorizontalAlignment="Left" Height="59" Margin="10,10,0,0" VerticalAlignment="Top" Width="{Binding Source={x:Static SystemParameters.PrimaryScreenWidth}}"  >
+            <Label Content="PAINEL DE SENHAS" Foreground="#FF7030A0" FontSize="35" ScrollViewer.CanContentScroll="True" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+        </Border>
+        <Border BorderBrush="#FFFDFCFC" BorderThickness="1" HorizontalAlignment="Left" Height="79" Margin="10,74,0,0" VerticalAlignment="Top" Width="{Binding Source={x:Static SystemParameters.PrimaryScreenWidth}}">
+            <Label Content="BATATA" Grid.Column="1" Foreground="#FFF5D60D" FontSize="50" ScrollViewer.CanContentScroll="True" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+        </Border>
+        <Border BorderBrush="#FFFDFCFC" BorderThickness="1" HorizontalAlignment="Left" Height="618" Margin="10,158,0,0" VerticalAlignment="Top" Width="{Binding Source={x:Static SystemParameters.PrimaryScreenWidth}}"  >
+            <Label x:Name="lblSenha" Content="SENHA" Grid.Column="1" Foreground="#FFFFFF" FontSize="200" ScrollViewer.CanContentScroll="True" HorizontalContentAlignment="Center" FontWeight="Bold" Margin="9,148,-9,9"/>
+        </Border>
     </Grid>
 </Window>

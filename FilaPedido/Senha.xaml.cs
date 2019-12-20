@@ -19,9 +19,11 @@ namespace FilaPedido
     /// </summary>
     public partial class Senha : Window
     {
+        public string senha = "";
         public Senha()
         {
             InitializeComponent();
+            this.lblSenha.Content = senha; ;
         }
     }
 }
