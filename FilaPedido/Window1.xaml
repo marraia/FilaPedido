@@ -30,6 +30,13 @@
         </Border>
         <Border x:Name="gridItem" BorderBrush="White" BorderThickness="1" Grid.Column="1" HorizontalAlignment="Left" Height="313" Margin="205,64,0,0" VerticalAlignment="Top" Width="675" Grid.ColumnSpan="4">
             <DataGrid x:Name="dgItem" IsReadOnly="True" AutoGenerateColumns="False" Background="Black" HeadersVisibility="None" RowBackground="Black" LoadingRow="DgItem_LoadingRow" GridLinesVisibility="None" BorderBrush="#FFF9FBFD" MouseDoubleClick="DgItem_MouseDoubleClick">
+                <DataGrid.ContextMenu>
+                    <ContextMenu Opened="ContextMenu_Opened">
+                        <MenuItem Name="opNovo" Header="Novo"/>
+                        <MenuItem Name="opPreparar" Header="Em Preparação"/>
+                        <MenuItem Name="opExibir" Header="Exibir no Painel" Click="OpExibir_Click"/>
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
                 <DataGrid.Columns>
                     <DataGridTextColumn x:Name="Pedido"
                             Binding="{Binding Pedido}"

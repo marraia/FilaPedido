@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.SignalR.Client;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -22,19 +23,40 @@ namespace FilaPedido
     /// </summary>
     public partial class Window1 : Window
     {
+        IHubProxy chat;
         public Window1()
         {
             InitializeComponent();
             var t = ObterNovo();
             Bind(t);
             BindCbo();
+            Senha senha = new Senha();
+            senha.Show();
         }
+
+        async private void makeConnection()
+        {
+            try
+            {
+                var hubConnection = new HubConnection("http://localhost:60978");
+                chat = hubConnection.CreateHubProxy("ChatHub");
+
+                await hubConnection.Start();
+                var item = this.cboItem.SelectedItem as NomeId;
+                await chat.Invoke("Send", item.Nome, $"{DateTime.Now.Hour}{DateTime.Now.Minute}{DateTime.Now.Second}{DateTime.Now.Millisecond}");
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
 
         private void BindCbo()
         {
             var pedidos = new List<NomeId>();
             pedidos.Add(new NomeId() { Id = 1, Nome = "BATATA" });
-            pedidos.Add(new NomeId() { Id = 1, Nome = "CONTRA FILÉ" });
+            pedidos.Add(new NomeId() { Id = 2, Nome = "CONTRA FILÉ" });
 
 
             cboItem.ItemsSource = pedidos;
@@ -121,6 +143,31 @@ namespace FilaPedido
         private void BtnFechar_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void ContextMenu_Opened(object sender, RoutedEventArgs e)
+        {
+            var grid = dgItem.SelectedItem as Item;
+            var tipo = grid.Tipo;
+
+            if (tipo == "NOVO")
+            {
+                this.opNovo.IsEnabled = false;
+                this.opPreparar.IsEnabled = true;
+                this.opExibir.IsEnabled = false;
+            }
+
+            if (tipo == "EM PREPARAÇÃO")
+            {
+                this.opNovo.IsEnabled = true;
+                this.opPreparar.IsEnabled = false;
+                this.opExibir.IsEnabled = true;
+            }
+        }
+
+        private void OpExibir_Click(object sender, RoutedEventArgs e)
+        {
+            makeConnection();
         }
     }
 

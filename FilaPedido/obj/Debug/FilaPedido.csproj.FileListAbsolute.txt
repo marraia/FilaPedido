@@ -20,3 +20,9 @@ C:\_estudos\FilaPedido\FilaPedido\obj\Debug\Window1.baml
 C:\_estudos\FilaPedido\FilaPedido\obj\Debug\Impressao.g.cs
 C:\_estudos\FilaPedido\FilaPedido\obj\Debug\Impressao.baml
 C:\_estudos\FilaPedido\FilaPedido\obj\Debug\App.baml
+C:\_estudos\FilaPedido\FilaPedido\bin\Debug\Microsoft.AspNet.SignalR.Client.dll
+C:\_estudos\FilaPedido\FilaPedido\bin\Debug\Newtonsoft.Json.dll
+C:\_estudos\FilaPedido\FilaPedido\bin\Debug\Microsoft.AspNet.SignalR.Client.pdb
+C:\_estudos\FilaPedido\FilaPedido\bin\Debug\Microsoft.AspNet.SignalR.Client.xml
+C:\_estudos\FilaPedido\FilaPedido\bin\Debug\Newtonsoft.Json.xml
+C:\_estudos\FilaPedido\FilaPedido\obj\Debug\FilaPedido.csproj.CopyComplete
